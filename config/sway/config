@@ -155,6 +155,16 @@ input "1739:10641:SYN1B7F:01_06CB:2991_Touchpad" {
     bindsym $mod+Shift+comma move container to workspace prev
     bindsym $mod+Shift+period move container to workspace next
 
+    bindsym $mod+Control+$left move workspace to output left
+    bindsym $mod+Control+$down move workspace to output down
+    bindsym $mod+Control+$up move workspace to output up
+    bindsym $mod+Control+$right move workspace to output right
+
+    bindsym $mod+Control+Left move workspace to output left
+    bindsym $mod+Control+Down move workspace to output down
+    bindsym $mod+Control+Up move workspace to output up
+    bindsym $mod+Control+Right move workspace to output right
+
 #
 # Layout stuff:
 #
