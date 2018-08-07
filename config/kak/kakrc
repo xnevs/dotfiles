@@ -21,15 +21,14 @@ hook global InsertChar \t %{
     exec -draft -itersel h@
 }
 
-
 # tab completion
 hook global InsertCompletionShow .* %{
     map global insert <tab> <c-n>;
-    map global insert <backtab> <c-p>
+    map global insert <s-tab> <c-p>
 }
 hook global InsertCompletionHide .* %{
     unmap global insert <tab> <c-n>;
-    unmap global insert <backtab> <c-p>
+    unmap global insert <s-tab> <c-p>
 }
 
 # <F2> to make
@@ -38,27 +37,3 @@ map global normal <F2> ':w;make<ret>'
 # <F3> and <F4> to move between buffers
 map global normal <F3> ':buffer-previous<ret>'
 map global normal <F4> ':buffer-next<ret>'
-
-# yank to system clipboard
-#hook global NormalKey y|d|c %{ nop %sh{
-#  printf %s "$kak_reg_dquote" | xsel --input --clipboard
-#}}
-
-# clang autocomplete
-#set global clang_options '-std=c++14'
-#hook global WinSetOption filetype=cpp %{
-#    clang-enable-autocomplete;
-#    #clang-enable-diagnostics
-#}
-#hook global WinSetOption filetype=(?!cpp$)(.*) %{
-#    clang-disable-autocomplete;
-#    #clang-disable-diagnostics
-#}
-
-############# MAPS #########################
-
-# paste from system clipboard
-# before
-#map global normal P '! xsel --output --clipboard<ret>'
-# after
-#map global normal p '<a-!> xsel --output --clipboard<ret>'
