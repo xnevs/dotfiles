@@ -68,6 +68,7 @@ input "1739:10641:SYN1B7F:01_06CB:2991_Touchpad" {
   middle_emulation enabled
   natural_scroll enabled
   scroll_method two_finger
+  click_method clickfinger
 }
 
 ### Key bindings
