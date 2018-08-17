@@ -269,6 +269,7 @@ bar {
 
 ### Notifications
 exec mako --padding=30 --background-color=#57bfbd
+exec redshift -l 46.056946:14.505751 -m wayland
 
 
 include /etc/sway/config.d/*
