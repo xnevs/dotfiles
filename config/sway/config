@@ -71,6 +71,10 @@ input "1739:10641:SYN1B7F:01_06CB:2991_Touchpad" {
   click_method clickfinger
 }
 
+input "5426:12:Razer_Razer_Lachesis" {
+  accel_profile flat
+}
+
 ### Key bindings
 #
 # Basics:

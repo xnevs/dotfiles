@@ -2,15 +2,15 @@
 
 # add line numbers
 #hook global WinCreate .* %{add-highlighter number_lines -separator ' '}
-add-highlighter global number_lines -separator ' '
+add-highlighter global/line_numbers number-lines -separator ' '
 
 # add brackets highliting
 #hook global WinCreate .* %{add-highlighter show_matching}
-add-highlighter global show_matching
+add-highlighter global/highlight_matching_brackets show-matching
 
 # add soft wrap
 #hook global WinCreate .* %{add-highlighter wrap -word}
-add-highlighter global wrap -word
+add-highlighter global/line_wrap wrap -word
 
 # indent
 set global indentwidth 2
