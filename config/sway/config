@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite
+set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $menu dmenu_path | dmenu | xargs swaymsg exec
@@ -45,9 +45,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
 # your displays after another 600 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle \
-    timeout 300 'swaylock -c 000000' \
-    timeout 300 'swaymsg "output * dpms off"' \
-       resume 'swaymsg "output * dpms on"' \
+    timeout 30 'systemctl suspend' \
     before-sleep 'swaylock -c 000000'
 
 ### Input configuration
@@ -212,7 +210,7 @@ input "5426:12:Razer_Razer_Lachesis" {
 # Colors:
 #
     # class                 border  backgr. text    indicator child_border
-    client.focused          #4c7899 #285577 #ffffff #e81062   #10e822
+#    client.focused          #4c7899 #285577 #ffffff #e81062   #10e822
 
 #
 # Scratchpad:
