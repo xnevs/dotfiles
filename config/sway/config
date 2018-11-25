@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $menu dmenu_path | dmenu | xargs swaymsg exec
@@ -22,7 +22,7 @@ set $menu rofi -modi drun -show drun
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in __DATADIR__/backgrounds/sway/)
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
 #
 # Example configuration:
@@ -45,7 +45,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
 # your displays after another 600 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle \
-    timeout 30 'systemctl suspend' \
+    timeout 300 'systemctl suspend' \
     before-sleep 'swaylock -c 000000'
 
 ### Input configuration
@@ -151,11 +151,11 @@ input "5426:12:Razer_Razer_Lachesis" {
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-    bindsym $mod+comma workspace prev
-    bindsym $mod+period workspace next
+    bindsym $mod+comma workspace prev_on_output
+    bindsym $mod+period workspace next_on_output
 
-    bindsym $mod+Shift+comma move container to workspace prev
-    bindsym $mod+Shift+period move container to workspace next
+    bindsym $mod+Shift+comma move container to workspace prev_on_output
+    bindsym $mod+Shift+period move container to workspace next_on_output
 
     bindsym $mod+Control+$left focus output left
     bindsym $mod+Control+$down focus output down
@@ -259,20 +259,21 @@ bar {
     colors {
         statusline #ffffff
         background #323232
-        focused_background #1d3642
+        #focused_background #1d3642
     }
+    status_command i3status
 }
 
 #
 # Brightness
 #
-    bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
-    bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+    bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+    bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 ### Notifications
 exec mako --padding=30 --background-color=#57bfbd
-exec redshift -l 46.056946:14.505751 -m wayland
 
+#exec redshift -l 46.056946:14.505751 -m wayland
 
 include /etc/sway/config.d/*

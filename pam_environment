@@ -1,5 +1,5 @@
 XKB_DEFAULT_LAYOUT=us,si
 XKB_DEFAULT_OPTIONS=grp:alt_space_toggle
 EDITOR=kak
-TERMINAL=termite
+TERMINAL=alacritty
 MOZ_USE_XINPUT2=1
