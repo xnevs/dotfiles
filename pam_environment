@@ -1,5 +1,8 @@
 XKB_DEFAULT_LAYOUT=us,si
 XKB_DEFAULT_OPTIONS=grp:alt_space_toggle
+
+SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
 EDITOR=kak
 TERMINAL=alacritty
 MOZ_USE_XINPUT2=1
